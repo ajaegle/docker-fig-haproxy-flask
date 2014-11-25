@@ -24,3 +24,11 @@ webb:
 
 redis:
   image: redis
+
+haproxy:
+  image: dockerfile/haproxy
+  volumes:
+   - haproxy:/haproxy-override
+  ports:
+   - "80:80"
+   - "70:70"
