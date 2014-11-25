@@ -1,4 +1,4 @@
-web:
+weba:
   build: .
   command: python app.py
   ports:
@@ -7,5 +7,20 @@ web:
    - .:/code
   links:
    - redis
+  environment:
+   - AJ_BACKEND=backend_1
+
+webb:
+  build: .
+  command: python app.py
+  ports:
+   - "5001:5000"
+  volumes:
+   - .:/code
+  links:
+   - redis
+  environment:
+   - AJ_BACKEND=backend_2
+
 redis:
   image: redis
